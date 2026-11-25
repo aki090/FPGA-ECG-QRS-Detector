@@ -1,0 +1,23 @@
+=== ECG QRS detector simulation: 3600 samples (10 s of ECG), noise switch SW = 0 ===
+VCD info: dumpfile sim/demo_overview.vcd opened for output.
+t = 1963610 ns | HEARTBEAT 1 detected at ECG sample 947 (2.63 s)
+t = 2531610 ns | HEARTBEAT 2 detected at ECG sample 1231 (3.42 s)
+                    RR = 284 samples  ->  heart rate = 76 BPM
+t = 3099610 ns | HEARTBEAT 3 detected at ECG sample 1515 (4.21 s)
+                    RR = 284 samples  ->  heart rate = 76 BPM
+t = 3689610 ns | HEARTBEAT 4 detected at ECG sample 1809 (5.03 s)
+                    RR = 294 samples  ->  heart rate = 73 BPM
+t = 4135610 ns | HEARTBEAT 5 detected at ECG sample 2045 (5.68 s)
+                    RR = 236 samples  ->  heart rate = 91 BPM
+t = 4875610 ns | HEARTBEAT 6 detected at ECG sample 2403 (6.67 s)
+                    RR = 358 samples  ->  heart rate = 60 BPM
+t = 5481610 ns | HEARTBEAT 7 detected at ECG sample 2706 (7.52 s)
+                    RR = 303 samples  ->  heart rate = 71 BPM
+t = 6065610 ns | HEARTBEAT 8 detected at ECG sample 2998 (8.33 s)
+                    RR = 292 samples  ->  heart rate = 73 BPM
+t = 6635610 ns | HEARTBEAT 9 detected at ECG sample 3283 (9.12 s)
+                    RR = 285 samples  ->  heart rate = 75 BPM
+t = 7189610 ns | HEARTBEAT 10 detected at ECG sample 3560 (9.89 s)
+                    RR = 277 samples  ->  heart rate = 77 BPM
+=== SIMULATION COMPLETE: 10 heartbeats detected ===
+tb/tb_demo.v:55: $finish called at 7260230000 (1ps)

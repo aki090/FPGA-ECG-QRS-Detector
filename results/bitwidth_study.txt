@@ -1,0 +1,22 @@
+--- Observed value ranges (record 100, 100 s, noise levels k=[0, 2, 4, 5, 7])
+signal                             max |value|  bits needed RTL width now
+x  ecg after noise injector               479           10           16
+hp baseline-removed                       472           10           16
+bp FIR output                             295           10           16
+d  derivative                              70            8           16
+sq squared (unsigned)                    4900           13           32
+env 54-sample sum (unsigned)            49371           16           40
+
+--- Narrower designs: do detections stay identical to the baseline? (FP/FN vs annotations)
+design                          k=0 same/FP/FN  k=2 same/FP/FN  k=4 same/FP/FN  k=5 same/FP/FN  k=7 same/FP/FN
+baseline (Q12, full)              YES  0/0         YES  1/0         YES  8/0         YES 11/0         YES 11/0     
+FIR coeffs Q10                    YES  0/0         YES  1/0         YES  8/0         YES 11/0          no 10/1     
+FIR coeffs Q8                     YES  0/0         YES  1/0          no  9/0         YES 11/0          no 11/0     
+FIR coeffs Q7                     YES  0/0         YES  1/0          no  9/0          no 12/0          no 12/1     
+FIR coeffs Q6                     YES  0/0         YES  1/0          no  9/0          no 12/0          no 10/0     
+square >> 4                       YES  0/0         YES  1/0          no  8/0          no 10/0          no 10/0     
+square >> 8                       YES  0/0          no  0/0         YES  8/0          no  9/0          no  9/0     
+square >> 10                       no  0/11         no  0/12         no  2/14         no  5/13         no 10/18    
+input drop 1 LSB                   no  0/0          no  1/0          no  9/0          no 12/0          no 11/0     
+input drop 2 LSB                   no  0/0          no  1/0          no  9/0          no 11/0          no 13/0     
+Q8 + square>>8 + drop 1 LSB        no  0/3          no  0/6          no  1/6          no  6/8          no 10/8     

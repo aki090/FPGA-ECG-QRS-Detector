@@ -1,0 +1,25 @@
+=== 1. Detection results, MIT-BIH record 100, 100 s (false beats / missed beats, R-peak error)
+ k | SNR(dB) |  baseline FP/FN  err(ms) | optimised FP/FN  err(ms) | same R-peak list?
+ 0 |   clean |       0/0        1.1   |       0/0        1.1   | yes
+ 1 |    12.0 |       0/0        1.2   |       0/0        1.2   | yes
+ 2 |     6.0 |       1/0        1.4   |       1/0        1.4   | yes
+ 3 |     2.5 |       4/0        1.8   |       4/0        2.8   | no
+ 4 |    -0.0 |       8/0        2.9   |       8/0        3.9   | no
+ 5 |    -1.9 |      11/0        4.0   |      10/0        3.9   | no
+ 6 |    -3.5 |      11/0        3.9   |      10/0        4.0   | no
+ 7 |    -4.9 |      11/0        4.0   |      10/0        4.5   | no
+
+=== 2. Resources counted from the RTL (NOT Quartus results)
+item                                   baseline  optimised   saving
+FIR shift register                          640        492      23%
+R-peak buffer (1024 x DW)                 16384      12288      25%
+Window buffer (54 x SQW)                   1728        972      44%
+Window sum                                   40         24      40%
+Baseline register                            24         20      17%
+Derivative history (4 x DW)                  64         48      25%
+Decision registers (8 x EW + sum)           371        227      39%
+TOTAL register / memory bits              19251      14071      27%
+FIR multipliers                              41          1
+Clock cycles per sample (pipeline)            6         48
+Clock cycles, beat accepted -> BPM           97         97
+Cycles available per sample on the board: 138889 (50 MHz / 360 Hz) -> worst case uses 0.07 %
