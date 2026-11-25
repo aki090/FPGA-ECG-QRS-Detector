@@ -112,7 +112,7 @@ Follow `quartus_project/README_quartus.md`. It has not been run in Quartus yet.
 
 ## 8. Board build (DE1-SoC)
 `quartus_project/` holds the Quartus Prime Lite 22.1 project (device 5CSEMA5F31C6). Top module `de1soc_top`: inputs CLOCK_50, KEY[0] (reset), SW[2:0] (noise level); outputs LEDR[9:0] (beat flash, done, switch echo) and HEX0..HEX5 (BPM digits). All 57 pins are assigned in `de1soc_top.qsf`; see `docs/ECG_QRS_All_Pins.pdf`.
-Compile result: 8,440 ALMs (26%), 3 DSP blocks, Fmax 61.62 MHz, setup slack +2.653 ns.
+Compile result: 8,440 ALMs (26%), 3 DSP blocks, Fmax 57.65 MHz (slow 1100 mV, 85 C), setup slack +2.653 ns.
 
 ## 9. Multi-record test (48 MIT-BIH records, first 100 s, bit-accurate Python model)
 | | Clean | Noise level 4 (about 0 dB) |
