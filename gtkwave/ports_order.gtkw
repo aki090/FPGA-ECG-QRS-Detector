@@ -1,0 +1,25 @@
+[*] GTKWave save file: top-level ports in order (inputs, then outputs)
+[dumpfile] "sim/demo_overview.vcd"
+[timestart] 0
+[size] 1500 700
+[pos] -1 -1
+*-20.0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+@200
+-INPUT PORTS
+@28
+tb_demo.rst
+@22
+tb_demo.sw[2:0]
+@200
+-
+-OUTPUT PORTS
+@28
+tb_demo.done
+tb_demo.beat_pulse
+@22
+tb_demo.rpeak_index[31:0]
+tb_demo.rr_samples[15:0]
+@28
+tb_demo.bpm_valid
+@22
+tb_demo.bpm[15:0]
